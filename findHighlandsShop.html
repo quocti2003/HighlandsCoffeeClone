@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="assets/images/highland_coffee_logo.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="assets/css/findHighlandsShop.css">
+  <link rel="stylesheet" href="assets/css/fHS_mapLeafletMarkers.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Thêm Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <title>Tìm quán cà phê | Highlands Coffee - Đặt Giao Ngay 19001755</title>
+  <style>
+    .search-button svg { 
+      fill: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Phần Header -->
+  <header class="highlands-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/highland_coffee_white_logo.png" alt="Highlands Coffee Logo">
+        </a>
+      </div>
+
+      <!-- Thanh Menu -->
+      <nav class="menu">
+        <a href="findHighlandsShop.html" class="menu-item active" style="font-weight: bold;">QUÁN CÀ PHÊ</a>
+        <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/san-pham.html" class="menu-item" style="font-weight: bold;">THỰC ĐƠN</a>
+        <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/tin-tuc.html" class="menu-item" style="font-weight: bold;">TIN TỨC</a>
+        <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/gioi-thieu.html" class="menu-item" style="font-weight: bold;">VỀ CHÚNG TÔI</a>
+        <a target="_blank" href="order.html" class="menu-item" style="font-weight: bold;">ĐẶT BÀN</a>
+      </nav>
+
+      <!-- Thanh Tìm Kiếm -->
+      <div class="search">
+        <input type="text" class="search-input" placeholder="Tìm kiếm...">
+        <button class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Phần Body -->
+  <main class="highlands-body">
+    <div class="header-and-location">
+      <h1 style="color: #ee3524" class="address">HIGHLANDS GẦN BẠN</h1>
+      <button id="getLocationBtn" class="location-btn">Xác định vị trí của tôi</button>
+    </div>
+    <div class="search-container">
+      <form class="search-form">
+        <div class="form-group">
+          <label for="country">Quốc gia:</label>
+          <select id="country" name="country" disabled>
+            <option value="vn" selected>Việt Nam</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="city">Tỉnh/Thành phố:</label>
+          <select id="city" name="city" disabled>
+            <option value="hcm" selected>TP. Hồ Chí Minh</option>
+          </select>
+        </div>
+        
+        <div class="form-group street-group">
+          <label for="street">Tên đường/Địa chỉ quán:</label>
+          <div class="input-wrapper">
+            <input type="text" id="street" name="street" placeholder="Nhập tên đường hoặc địa chỉ quán" autocomplete="off">
+            <div id="suggestions" class="suggestions"></div> <!-- Thêm div cho gợi ý -->
+            <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="map" id="map"></div>
+    <div id="locationModal" class="modal">
+      <div class="modal-content">
+        <h2>Yêu cầu truy cập vị trí</h2>
+        <p>Chúng tôi cần truy cập vị trí của bạn để tìm các quán Highlands Coffee gần nhất. Bạn có đồng ý không?</p>
+        <button id="allowLocationBtn" class="modal-btn allow-btn">Đồng ý</button>
+        <button id="denyLocationBtn" class="modal-btn deny-btn">Từ chối</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="highlands-footer">
+    <div class="footer-container">
+      <div class="social-links">
+        <ul>
+          <li><a href="https://www.facebook.com/highlandscoffeevietnam/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCHEqa2uTf8uXrGWrnU3ThgA" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://www.instagram.com/highlandscoffeevietnam/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+      <div class="copyright">© 2018 Highlands Coffee. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="popupMaillist()">
+          <i class="far fa-paper-plane"></i> Đăng ký nhận bản tin
+        </a>
+        <a href="mailto:customerservice@highlandscoffee.com.vn">
+          <i class="far fa-envelope"></i> customerservice@highlandscoffee.com.vn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Thêm Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/findHighlandsShop.js"></script>
+</body>
+</html>

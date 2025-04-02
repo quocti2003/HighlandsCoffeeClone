@@ -86,6 +86,16 @@ function resetForm() {
 form.addEventListener('submit', function (e) {
   e.preventDefault(); // Ngăn form submit thật
 
+  // Tính tổng số khách tối đa trước khi xử lý
+  const totalGuests = getTotalMaxGuests();
+  const maxCapacity = parseInt(document.querySelector('.available-tables').textContent.match(/\d+/)[0]); // Lấy sức chứa tối đa từ text
+
+  // Kiểm tra nếu tổng số khách vượt quá sức chứa tối đa
+  if (totalGuests > maxCapacity) {
+    alert(`Số khách (${totalGuests}) vượt quá sức chứa tối đa (${maxCapacity}). Vui lòng giảm số lượng bàn!`);
+    return; // Không hiển thị popup nếu vượt quá
+  }
+
   // Lấy dữ liệu từ form
   const name = document.getElementById('user-name').value;
   const phone = document.getElementById('phone-number').value;
@@ -123,7 +133,7 @@ form.addEventListener('submit', function (e) {
 
   document.getElementById('popup-total').textContent = totalPrice.toLocaleString('vi-VN') + ' VND';
 
-  // Hiển thị pop-up và làm tối nền
+  // Hiển thị pop-up và làm tối nền chỉ khi hợp lệ
   popup.style.display = 'flex';
   document.body.classList.add('popup-active');
 });
@@ -231,15 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
     checkbox.addEventListener('change', () => {
       updateIncreaseButtons(); // Cập nhật trạng thái nút tăng
     });
-  });
-
-  // Phần 4: Kiểm tra khi submit form
-  form.addEventListener('submit', (e) => {
-    const totalGuests = getTotalMaxGuests();
-    if (totalGuests > maxCapacity) {
-      e.preventDefault();
-      alert(`Số khách (${totalGuests}) vượt quá sức chứa tối đa (${maxCapacity}). Vui lòng giảm số lượng bàn!`);
-    }
   });
 
   // Khởi tạo trạng thái ban đầu của các nút tăng

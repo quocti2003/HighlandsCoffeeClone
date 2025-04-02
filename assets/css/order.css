@@ -110,7 +110,6 @@ body {
   fill: #555;
 }
 
-
 /* Phần body - Canh giữa container */
 .highlands-body {
   display: flex;
@@ -287,7 +286,6 @@ body {
   }
 }
 
-
 /* Đảm bảo các table-option có bố cục đồng đều */
 .table-option {
   display: flex;
@@ -349,9 +347,6 @@ body {
     margin-top: 5px;
   }
 }
-
-
-
 
 /* Làm tối nền khi pop-up xuất hiện */
 body.popup-active {
@@ -480,8 +475,6 @@ body.popup-active::before {
   }
 }
 
-
-
 /* Footer Styles */
 .highlands-footer {
   background-color: #59362e; /* Deep brown */
@@ -582,4 +575,19 @@ body.popup-active::before {
   .social-links ul {
     display: block;
   }
+}
+
+/* Style cho phần sức chứa tối đa */
+.available-tables {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #b22830;
+  margin: 5px 0;
+}
+
+/* Style cho nút tăng khi bị disable */
+.quantity-control button:disabled {
+  background-color: #cccccc; /* Màu xám khi bị vô hiệu hóa */
+  cursor: not-allowed;
+  opacity: 0.6;
 }

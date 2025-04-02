@@ -37,14 +37,11 @@
       <nav class="menu">
         <a href="findHighlandsShop.html" class="menu-item" style="font-weight: bold;">QUÁN CÀ PHÊ</a>
         <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/san-pham.html" class="menu-item"
-          style="font-weight: bold;">THỰC
-          ĐƠN</a>
+          style="font-weight: bold;">THỰC ĐƠN</a>
         <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/tin-tuc.html" class="menu-item"
-          style="font-weight: bold;">TIN
-          TỨC</a>
+          style="font-weight: bold;">TIN TỨC</a>
         <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/gioi-thieu.html" class="menu-item"
-          style="font-weight: bold;">VỀ
-          CHÚNG TÔI</a>
+          style="font-weight: bold;">VỀ CHÚNG TÔI</a>
         <a style="background-color: #53382c;" href="order.html" class="menu-item" style="font-weight: bold;">ĐẶT BÀN</a>
       </nav>
 
@@ -62,100 +59,98 @@
     </div>
   </header>
 
-
   <!-- Phần body -->
   <main class="highlands-body">
-    <main class="highlands-body">
-      <h1 style="color: #ee3524" class="nameStore"></h1>
-      <div class="container">
-        <!-- left-container -->
-        <div class="left-container">
-          <img class="highlands-coffee-shop-signature" src="assets/images/highlands-coffee-signature.jpg"
-            alt="highlands-coffee-shop-signature">
-        </div>
-
-        <!-- right-container -->
-        <div class="right-container" style="background-color: red;">
-          <!-- Form đăng ký đặt bàn -->
-          <form class="booking-form">
-            <!-- Phần nhập tên -->
-            <div class="form-group">
-              <label for="user-name">Họ và tên:</label>
-              <input type="text" id="user-name" name="user-name" placeholder="Nhập họ và tên" required>
-            </div>
-
-            <!-- Phần nhập số điện thoại -->
-            <div class="form-group">
-              <label for="phone-number">Số điện thoại:</label>
-              <input type="tel" id="phone-number" name="phone-number" placeholder="Nhập số điện thoại" required>
-            </div>
-
-            <!-- Phần chọn loại bàn và số lượng -->
-            <div class="table-selection">
-              <h3>Chọn loại bàn:</h3>
-
-              <!-- Bàn 1-2 khách -->
-              <div class="table-option">
-                <input type="checkbox" id="table-1-2" name="table-1-2">
-                <label for="table-1-2">Bàn 1-2 khách</label>
-                <div class="quantity-control">
-                  <button type="button" class="decrease">-</button>
-                  <input type="number" id="qty-1-2" name="qty-1-2" min="0" value="0">
-                  <button type="button" class="increase">+</button>
-                </div>
-                <span class="price">Giá: 10.000 VND</span>
-              </div>
-
-              <!-- Bàn 4-6 khách -->
-              <div class="table-option">
-                <input type="checkbox" id="table-4-6" name="table-4-6">
-                <label for="table-4-6">Bàn 4-6 khách</label>
-                <div class="quantity-control">
-                  <button type="button" class="decrease">-</button>
-                  <input type="number" id="qty-4-6" name="qty-4-6" min="0" value="0">
-                  <button type="button" class="increase">+</button>
-                </div>
-                <span class="price">Giá: 20.000 VND</span>
-              </div>
-
-              <!-- Bàn 8-12 khách -->
-              <div class="table-option">
-                <input type="checkbox" id="table-8-12" name="table-8-12">
-                <label for="table-8-12">Bàn 8-12 khách</label>
-                <div class="quantity-control">
-                  <button type="button" class="decrease">-</button>
-                  <input type="number" id="qty-8-12" name="qty-8-12" min="0" value="0">
-                  <button type="button" class="increase">+</button>
-                </div>
-                <span class="price">Giá: 40.000 VND</span>
-              </div>
-            </div>
-
-            <!-- Phần địa chỉ -->
-            <div class="form-group">
-              <label>Địa chỉ:</label>
-              <p class="address-display"></p>
-            </div>
-
-            <!-- Phần chọn ngày giờ -->
-            <div class="form-group">
-              <label for="booking-datetime">Ngày giờ đặt bàn:</label>
-              <input type="datetime-local" id="booking-datetime" name="booking-datetime" required>
-            </div>
-
-            <!-- Phần mã QR -->
-            <div class="qr-code">
-              <img src="assets/images/qrcode-default.png" alt="Mã QR thanh toán">
-            </div>
-
-            <!-- Nút submit -->
-            <button type="submit" class="submit-btn">Đặt bàn</button>
-          </form>
-        </div>
+    <h1 style="color: #ee3524" class="nameStore"></h1>
+    <div class="container">
+      <!-- left-container -->
+      <div class="left-container">
+        <img class="highlands-coffee-shop-signature" src="assets/images/highlands-coffee-signature.jpg"
+          alt="highlands-coffee-shop-signature">
       </div>
-    </main>
-  </main>
 
+      <!-- right-container -->
+      <div class="right-container" style="background-color: red;">
+        <!-- Form đăng ký đặt bàn -->
+        <form class="booking-form">
+          <!-- Phần nhập tên -->
+          <div class="form-group">
+            <label for="user-name">Họ và tên:</label>
+            <input type="text" id="user-name" name="user-name" placeholder="Nhập họ và tên" required>
+          </div>
+
+          <!-- Phần nhập số điện thoại -->
+          <div class="form-group">
+            <label for="phone-number">Số điện thoại:</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="Nhập số điện thoại" required>
+          </div>
+
+          <!-- Phần chọn loại bàn và số lượng -->
+          <div class="table-selection">
+            <h3>Chọn loại bàn:</h3>
+            <!-- Thêm dòng hiển thị sức chứa tối đa -->
+            <p class="available-tables">Sức chứa tối đa: <span id="available-tables-count">0</span> khách</p>
+
+            <!-- Bàn 1-2 khách -->
+            <div class="table-option">
+              <input type="checkbox" id="table-1-2" name="table-1-2">
+              <label for="table-1-2">Bàn 1-2 khách</label>
+              <div class="quantity-control">
+                <button type="button" class="decrease">-</button>
+                <input type="number" id="qty-1-2" name="qty-1-2" min="0" value="0">
+                <button type="button" class="increase">+</button>
+              </div>
+              <span class="price">Giá: 10.000 VND</span>
+            </div>
+
+            <!-- Bàn 4-6 khách -->
+            <div class="table-option">
+              <input type="checkbox" id="table-4-6" name="table-4-6">
+              <label for="table-4-6">Bàn 4-6 khách</label>
+              <div class="quantity-control">
+                <button type="button" class="decrease">-</button>
+                <input type="number" id="qty-4-6" name="qty-4-6" min="0" value="0">
+                <button type="button" class="increase">+</button>
+              </div>
+              <span class="price">Giá: 20.000 VND</span>
+            </div>
+
+            <!-- Bàn 8-12 khách -->
+            <div class="table-option">
+              <input type="checkbox" id="table-8-12" name="table-8-12">
+              <label for="table-8-12">Bàn 8-12 khách</label>
+              <div class="quantity-control">
+                <button type="button" class="decrease">-</button>
+                <input type="number" id="qty-8-12" name="qty-8-12" min="0" value="0">
+                <button type="button" class="increase">+</button>
+              </div>
+              <span class="price">Giá: 40.000 VND</span>
+            </div>
+          </div>
+
+          <!-- Phần địa chỉ -->
+          <div class="form-group">
+            <label>Địa chỉ:</label>
+            <p class="address-display"></p>
+          </div>
+
+          <!-- Phần chọn ngày giờ -->
+          <div class="form-group">
+            <label for="booking-datetime">Ngày giờ đặt bàn:</label>
+            <input type="datetime-local" id="booking-datetime" name="booking-datetime" required>
+          </div>
+
+          <!-- Phần mã QR -->
+          <div class="qr-code">
+            <img src="assets/images/qrcode-default.png" alt="Mã QR thanh toán">
+          </div>
+
+          <!-- Nút submit -->
+          <button type="submit" class="submit-btn">Đặt bàn</button>
+        </form>
+      </div>
+    </div>
+  </main>
 
   <!-- Pop-up xác nhận đặt chỗ -->
   <div id="confirmation-popup" class="popup">
@@ -185,8 +180,6 @@
     </div>
   </div>
 
-
-
   <footer class="highlands-footer">
     <div class="footer-container">
       <div class="social-links">
@@ -210,7 +203,6 @@
       </div>
     </div>
   </footer>
-
 
   <script src="assets/js/order.js"></script>
 </body>

@@ -137,3 +137,111 @@ function closePopup() {
   document.body.classList.remove('popup-active');
   resetForm(); // Gọi hàm reset form khi đóng pop-up
 }
+
+// Code mới thêm vào để xử lý sức chứa tối đa và disable nút tăng
+document.addEventListener('DOMContentLoaded', () => {
+  // Phần 1: Tạo sức chứa tối đa ngẫu nhiên
+  const maxCapacity = Math.floor(Math.random() * (50 - 2 + 1)) + 2; // Từ 2 đến 50 khách
+  document.querySelector('.available-tables').textContent = `Sức chứa tối đa: ${maxCapacity} khách`;
+
+  // Phần 2: Định nghĩa thông tin các loại bàn với số khách tối đa
+  const tableOptions = [
+    { checkboxId: 'table-1-2', qtyId: 'qty-1-2', maxGuests: 2, decreaseBtn: '.decrease', increaseBtn: '.increase' },
+    { checkboxId: 'table-4-6', qtyId: 'qty-4-6', maxGuests: 6, decreaseBtn: '.decrease', increaseBtn: '.increase' },
+    { checkboxId: 'table-8-12', qtyId: 'qty-8-12', maxGuests: 12, decreaseBtn: '.decrease', increaseBtn: '.increase' }
+  ];
+
+  // Hàm tính tổng số khách tối đa từ các bàn được tick
+  function getTotalMaxGuests() {
+    let totalGuests = 0;
+    tableOptions.forEach(opt => {
+      const checkbox = document.getElementById(opt.checkboxId);
+      const qty = parseInt(document.getElementById(opt.qtyId).value) || 0;
+      if (checkbox.checked) {
+        totalGuests += qty * opt.maxGuests;
+      }
+    });
+    return totalGuests;
+  }
+
+  // Hàm cập nhật trạng thái các nút tăng và kiểm tra sức chứa
+  function updateIncreaseButtons() {
+    const totalGuests = getTotalMaxGuests();
+    tableOptions.forEach(opt => {
+      const increaseBtn = document.querySelector(`#${opt.checkboxId} ~ .quantity-control ${opt.increaseBtn}`);
+      increaseBtn.disabled = totalGuests >= maxCapacity; // Disable nếu tổng số khách >= sức chứa tối đa
+    });
+  }
+
+  // Phần 3: Kiểm tra và xử lý số lượng bàn dựa trên sức chứa tối đa
+  tableOptions.forEach(option => {
+    const checkbox = document.getElementById(option.checkboxId);
+    const qtyInput = document.getElementById(option.qtyId);
+    const decreaseBtn = document.querySelector(`#${option.checkboxId} ~ .quantity-control ${option.decreaseBtn}`);
+    const increaseBtn = document.querySelector(`#${option.checkboxId} ~ .quantity-control ${option.increaseBtn}`);
+
+    // Ghi đè sự kiện tăng số lượng (tăng từng bước 1)
+    increaseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (checkbox.checked) {
+        const currentValue = parseInt(qtyInput.value) || 0;
+        const totalGuests = getTotalMaxGuests();
+        const newTotalGuests = totalGuests + option.maxGuests;
+        if (newTotalGuests <= maxCapacity) {
+          qtyInput.value = currentValue + 1; // Tăng từng bước 1
+          updateIncreaseButtons(); // Cập nhật trạng thái nút tăng
+        } else {
+          alert(`Đã hết chỗ! Sức chứa tối đa của cửa hàng là ${maxCapacity} khách.`);
+          updateIncreaseButtons(); // Đảm bảo nút bị disable
+        }
+      }
+    });
+
+    // Ghi đè sự kiện giảm số lượng
+    decreaseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (checkbox.checked) {
+        const currentValue = parseInt(qtyInput.value) || 0;
+        if (currentValue > 0) {
+          qtyInput.value = currentValue - 1;
+          updateIncreaseButtons(); // Cập nhật trạng thái nút tăng
+        }
+      }
+    });
+
+    // Kiểm tra khi người dùng nhập tay vào input
+    qtyInput.addEventListener('input', () => {
+      const currentValue = parseInt(qtyInput.value) || 0;
+      const totalGuests = getTotalMaxGuests();
+      if (totalGuests > maxCapacity) {
+        alert(`Số khách (${totalGuests}) vượt quá sức chứa tối đa (${maxCapacity}). Vui lòng giảm số lượng!`);
+        const excessGuests = totalGuests - maxCapacity;
+        const maxAllowedTables = Math.floor((maxCapacity - (totalGuests - (currentValue * option.maxGuests))) / option.maxGuests);
+        qtyInput.value = maxAllowedTables > 0 ? maxAllowedTables : 0;
+      }
+      if (currentValue > 0) {
+        checkbox.checked = true;
+      } else {
+        checkbox.checked = false;
+      }
+      updateIncreaseButtons(); // Cập nhật trạng thái nút tăng
+    });
+
+    // Cập nhật trạng thái nút khi checkbox thay đổi
+    checkbox.addEventListener('change', () => {
+      updateIncreaseButtons(); // Cập nhật trạng thái nút tăng
+    });
+  });
+
+  // Phần 4: Kiểm tra khi submit form
+  form.addEventListener('submit', (e) => {
+    const totalGuests = getTotalMaxGuests();
+    if (totalGuests > maxCapacity) {
+      e.preventDefault();
+      alert(`Số khách (${totalGuests}) vượt quá sức chứa tối đa (${maxCapacity}). Vui lòng giảm số lượng bàn!`);
+    }
+  });
+
+  // Khởi tạo trạng thái ban đầu của các nút tăng
+  updateIncreaseButtons();
+});

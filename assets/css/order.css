@@ -183,6 +183,18 @@ body {
   color: #555;
 }
 
+.address-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+.address-input:disabled {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
 /* Phần chọn loại bàn */
 .table-selection h3 {
   margin: 10px 0;
@@ -474,7 +486,6 @@ body.popup-active::before {
     padding: 8px 15px; /* Thu nhỏ hơn trên mobile */
   }
 }
-
 /* Footer Styles */
 .highlands-footer {
   background-color: #59362e; /* Deep brown */

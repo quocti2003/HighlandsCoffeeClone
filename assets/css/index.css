@@ -118,7 +118,7 @@ body {
 
 /* Footer Styles */
 .highlands-footer {
-  background-color: #59362e; /* Deep brown */
+  background-color: #59362e; 
   color: white;
   padding: 20px 0;
   font-size: 0.9rem;
@@ -147,19 +147,19 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-block; /* Changed */
+  display: inline-block; 
 }
 
 .social-links li {
-  margin: 0 5px; /* Reduced spacing */
-  display: inline-block; /* Changed */
+  margin: 0 5px; 
+  display: inline-block; 
 }
 
 .social-links a {
   color: white;
-  font-size: 1.5em; /* Adjusted size */
+  font-size: 1.5em;
   transition: color 0.3s ease;
-  display: inline-block; /* Added to allow hover */
+  display: inline-block; 
   width: 35px;
   height: 35px;
   text-align: center;
@@ -167,7 +167,7 @@ body {
 }
 
 .social-links a:hover {
-  color: #ddd; /* Lighter shade on hover */
+  color: #ddd; 
   text-decoration: none;
 }
 
@@ -234,7 +234,7 @@ body {
 .new-store {
   width: 50%; /* Chiếm 50% chiều rộng */
   background-color: #fff;
-  box-sizing: border-box; /* Đảm bảo padding không làm vượt kích thước */
+  box-sizing: border-box; 
 }
 
 /* Phần tin tức mới nhất */
@@ -445,7 +445,7 @@ a{
 }
 
 .news-content{
-  text-align: left; /* Giữ chữ canh trái trong news-content */
+  text-align: left; 
 }
 
 .news-content h3 {

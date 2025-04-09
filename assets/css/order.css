@@ -298,7 +298,7 @@ body {
   }
 }
 
-/* Đảm bảo các table-option có bố cục đồng đều */
+
 .table-option {
   display: flex;
   align-items: center;
@@ -312,7 +312,7 @@ body {
 }
 
 .table-option label {
-  flex: 1 1 150px; /* Label chiếm chiều rộng tối thiểu 150px, co giãn linh hoạt */
+  flex: 1 1 150px;
   white-space: nowrap; /* Ngăn label xuống dòng */
 }
 
@@ -324,11 +324,11 @@ body {
 }
 
 .table-option .price {
-  flex: 1 1 auto; /* Price chiếm phần còn lại, co giãn linh hoạt */
-  text-align: right; /* Canh phải cho đơn giá */
+  flex: 1 1 auto; 
+  text-align: right; 
 }
 
-/* Đảm bảo các nút và input trong quantity-control có kích thước cố định */
+
 .quantity-control button {
   width: 25px;
   height: 25px;
@@ -362,7 +362,7 @@ body {
 
 /* Làm tối nền khi pop-up xuất hiện */
 body.popup-active {
-  overflow: hidden; /* Ngăn cuộn trang */
+  overflow: hidden; 
 }
 
 body.popup-active::before {
@@ -455,12 +455,12 @@ body.popup-active::before {
 .confirm-btn {
   background-color: #b22830;
   color: white;
-  padding: 10px 20px; /* Rút ngắn padding ngang để nút nhỏ hơn */
+  padding: 10px 20px; 
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  width: auto; /* Bỏ width 100%, để nút tự co theo nội dung */
+  width: auto; 
   display: block;
   margin: 0 auto; /* Canh giữa theo chiều ngang */
 }
@@ -517,19 +517,19 @@ body.popup-active::before {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-block; /* Changed */
+  display: inline-block; 
 }
 
 .social-links li {
-  margin: 0 5px; /* Reduced spacing */
-  display: inline-block; /* Changed */
+  margin: 0 5px; 
+  display: inline-block; 
 }
 
 .social-links a {
   color: white;
-  font-size: 1.5em; /* Adjusted size */
+  font-size: 1.5em;
   transition: color 0.3s ease;
-  display: inline-block; /* Added to allow hover */
+  display: inline-block;
   width: 35px;
   height: 35px;
   text-align: center;
@@ -537,7 +537,7 @@ body.popup-active::before {
 }
 
 .social-links a:hover {
-  color: #ddd; /* Lighter shade on hover */
+  color: #ddd;
   text-decoration: none;
 }
 

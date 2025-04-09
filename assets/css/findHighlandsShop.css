@@ -1,0 +1,520 @@
+/* Import Font Montserrat from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Đảm bảo tất cả phần tử sử dụng box-sizing: border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.highlands-header {
+  background-color: #b22830;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+  width: 100vw;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 8vw;
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* Menu Styles */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  margin: 0 1vw;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #ddd;
+}
+
+.menu-item.active {
+  background-color: #53382c;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+/* Search Styles */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1%;
+}
+
+.search-input {
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  width: 30vw;
+  max-width: 280px;
+  height: 50px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-left: -45px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+  background-color: #eee;
+  transform: scale(1.1);
+}
+
+.search-button svg {
+  fill: #555;
+}
+
+/* Body Styles */
+.highlands-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding: 20px 0;
+}
+
+.address {
+  margin-bottom: 20px;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+.search-container {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  height: 34px;
+}
+
+.form-group select:disabled {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.street-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.street-group .input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.street-group input {
+  flex: 1;
+  min-width: 0;
+  height: 34px;
+}
+
+.search-btn {
+  background-color: #b22830;
+  color: white;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group select,
+.form-group input#district,
+.street-group input {
+  max-width: 100%;
+}
+
+.search-btn:hover {
+  background-color: #8e1f26;
+}
+
+/* Location Button Styles */
+.location-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.location-btn:hover {
+  background-color: #45a049;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.modal-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+}
+
+.allow-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.allow-btn:hover {
+  background-color: #45a049;
+}
+
+.deny-btn {
+  background-color: #b22830;
+  color: white;
+}
+
+.deny-btn:hover {
+  background-color: #8e1f26;
+}
+
+/* Map Styles */
+.map {
+  width: 90vw;
+  max-width: 100%;
+  padding: 0 20px;
+  height: 650px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and Location */
+.header-and-location {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.header-and-location .address {
+  margin: 0;
+}
+
+.header-and-location .location-btn {
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions .suggestion-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.suggestions .suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.input-wrapper {
+  position: relative; /* Để suggestions định vị tương đối với input */
+}
+
+/* Footer Styles */
+.highlands-footer {
+  background-color: #59362e;
+  color: white;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  clear: both;
+  text-align: center;
+  width: 100vw;
+}
+
+.footer-container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.social-links,
+.copyright,
+.footer-links {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.social-links {
+  margin-right: 20px;
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.social-links li {
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+}
+
+.social-links a:hover {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.copyright {
+  margin: 0 20px;
+}
+
+.footer-links {
+  margin-left: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .form-group {
+    min-width: 100%;
+    margin: 0;
+  }
+
+  .street-group .input-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-btn {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .address {
+    margin-left: 10px;
+  }
+
+  .map {
+    height: 300px;
+    padding: 0 10px;
+  }
+
+  .location-btn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .modal-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .highlands-footer {
+    text-align: center;
+  }
+
+  .footer-container {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .social-links,
+  .copyright,
+  .footer-links {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .social-links ul {
+    display: block;
+  }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="assets/images/highland_coffee_logo.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="assets/css/order.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Đặt bàn | Highlands Coffee - Đặt Giao Ngay 19001755</title>
+  <style>
+    .search-button svg {
+      fill: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Phần Header -->
+  <header class="highlands-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/highland_coffee_white_logo.png" alt="Highlands Coffee Logo">
+        </a>
+      </div>
+
+      <!-- Thanh Menu -->
+      <nav class="menu">
+        <a href="findHighlandsShop.html" class="menu-item" style="font-weight: bold;">QUÁN CÀ PHÊ</a>
+        <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/san-pham.html" class="menu-item"
+          style="font-weight: bold;">THỰC ĐƠN</a>
+        <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/tin-tuc.html" class="menu-item"
+          style="font-weight: bold;">TIN TỨC</a>
+        <a target="_blank" href="https://www.highlandscoffee.com.vn/vn/gioi-thieu.html" class="menu-item"
+          style="font-weight: bold;">VỀ CHÚNG TÔI</a>
+        <a style="background-color: #53382c;" href="order.html" class="menu-item" style="font-weight: bold;">ĐẶT BÀN</a>
+      </nav>
+
+      <!-- Thanh Tìm Kiếm -->
+      <div class="search">
+        <input type="text" class="search-input" placeholder="Tìm kiếm...">
+        <button class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Phần body -->
+  <main class="highlands-body">
+    <h1 style="color: #ee3524" class="nameStore"></h1>
+    <div class="container">
+      <!-- left-container -->
+      <div class="left-container">
+        <img class="highlands-coffee-shop-signature" src="assets/images/highlands-coffee-signature.jpg"
+          alt="highlands-coffee-shop-signature">
+      </div>
+
+      <!-- right-container -->
+      <div class="right-container" style="background-color: red;">
+        <!-- Form đăng ký đặt bàn -->
+        <form class="booking-form">
+          <!-- Phần nhập tên -->
+          <div class="form-group">
+            <label for="user-name">Họ và tên:</label>
+            <input type="text" id="user-name" name="user-name" placeholder="Nhập họ và tên" required>
+          </div>
+
+          <!-- Phần nhập số điện thoại -->
+          <div class="form-group">
+            <label for="phone-number">Số điện thoại:</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="Nhập số điện thoại" required>
+          </div>
+
+          <!-- Phần chọn loại bàn và số lượng -->
+          <div class="table-selection">
+            <h3>Chọn loại bàn:</h3>
+            <!-- Thêm dòng hiển thị sức chứa tối đa -->
+            <p class="available-tables">Sức chứa tối đa: 0 khách</p> <!-- Xóa span -->
+
+            <!-- Bàn 1-2 khách -->
+            <div class="table-option">
+              <input type="checkbox" id="table-1-2" name="table-1-2">
+              <label for="table-1-2">Bàn 1-2 khách</label>
+              <div class="quantity-control">
+                <button type="button" class="decrease">-</button>
+                <input type="number" id="qty-1-2" name="qty-1-2" min="0" value="0">
+                <button type="button" class="increase">+</button>
+              </div>
+              <span class="price">Giá: 10.000 VND</span>
+            </div>
+
+            <!-- Bàn 4-6 khách -->
+            <div class="table-option">
+              <input type="checkbox" id="table-4-6" name="table-4-6">
+              <label for="table-4-6">Bàn 4-6 khách</label>
+              <div class="quantity-control">
+                <button type="button" class="decrease">-</button>
+                <input type="number" id="qty-4-6" name="qty-4-6" min="0" value="0">
+                <button type="button" class="increase">+</button>
+              </div>
+              <span class="price">Giá: 20.000 VND</span>
+            </div>
+
+            <!-- Bàn 8-12 khách -->
+            <div class="table-option">
+              <input type="checkbox" id="table-8-12" name="table-8-12">
+              <label for="table-8-12">Bàn 8-12 khách</label>
+              <div class="quantity-control">
+                <button type="button" class="decrease">-</button>
+                <input type="number" id="qty-8-12" name="qty-8-12" min="0" value="0">
+                <button type="button" class="increase">+</button>
+              </div>
+              <span class="price">Giá: 40.000 VND</span>
+            </div>
+          </div>
+
+          <!-- Phần địa chỉ -->
+          <div class="form-group">
+            <label>Địa chỉ:</label>
+            <p class="address-display"></p>
+          </div>
+
+          <!-- Phần chọn ngày giờ -->
+          <div class="form-group">
+            <label for="booking-datetime">Ngày giờ đặt bàn:</label>
+            <input type="datetime-local" id="booking-datetime" name="booking-datetime" required>
+          </div>
+
+          <!-- Phần mã QR -->
+          <div class="qr-code">
+            <img src="assets/images/qrcode-default.png" alt="Mã QR thanh toán">
+          </div>
+
+          <!-- Nút submit -->
+          <button type="submit" class="submit-btn">Đặt bàn</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pop-up xác nhận đặt chỗ -->
+  <div id="confirmation-popup" class="popup">
+    <div class="popup-content">
+      <!-- Nút đóng (dấu X) -->
+      <span class="close-btn">x</span>
+
+      <!-- Tiêu đề -->
+      <h2>Xác nhận đặt chỗ</h2>
+
+      <!-- Hình GIF -->
+      <img src="assets/images/checkmark-red-unscreen.gif" alt="Checkmark" class="popup-gif">
+
+      <!-- Thông tin đơn hàng -->
+      <div class="order-details">
+        <p><strong>Họ và tên:</strong> <span id="popup-name"></span></p>
+        <p><strong>Số điện thoại:</strong> <span id="popup-phone"></span></p>
+        <p><strong>Loại bàn:</strong></p>
+        <ul id="popup-tables"></ul>
+        <p><strong>Địa chỉ:</strong> <span id="popup-address"></span></p>
+        <p><strong>Ngày giờ đặt bàn:</strong> <span id="popup-datetime"></span></p>
+        <p><strong>Tổng tiền:</strong> <strong><span id="popup-total">0 VND</span></strong></p>
+      </div>
+
+      <!-- Nút xác nhận -->
+      <button class="confirm-btn">Xác nhận đơn hàng</button>
+    </div>
+  </div>
+
+  <footer class="highlands-footer">
+    <div class="footer-container">
+      <div class="social-links">
+        <ul>
+          <li><a href="https://www.facebook.com/highlandscoffeevietnam/" target="_blank"><i
+                class="fab fa-facebook-square"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCHEqa2uTf8uXrGWrnU3ThgA" target="_blank"><i
+                class="fab fa-youtube"></i></a></li>
+          <li><a href="https://www.instagram.com/highlandscoffeevietnam/" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+      <div class="copyright">© 2018 Highlands Coffee. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="javascript:void(0)" onclick="popupMaillist()">
+          <i class="far fa-paper-plane"></i> Đăng ký nhận bản tin
+        </a>
+        <a href="mailto:customerservice@highlandscoffee.com.vn">
+          <i class="far fa-envelope"></i> customerservice@highlandscoffee.com.vn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/order.js"></script>
+</body>
+
+</html>

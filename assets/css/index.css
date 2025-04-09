@@ -1,0 +1,455 @@
+/* client/assets/css/index.css */
+
+/* Import Font Montserrat from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Header Styles */
+.highlands-header {
+  background-color: #b22830;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  width: 8vw;
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* Menu Styles */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  margin: 0 1vw;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #ddd;
+}
+
+/* Search Styles */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-input {
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  width: 20vw;
+  max-width: 250px;
+  height: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-left: -45px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+  background-color: #eee;
+  transform: scale(1.1);
+}
+
+.search-button svg {
+  fill: #555;
+}
+
+
+.main-thumbnail-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  display: block;
+}
+
+/* Footer Styles */
+.highlands-footer {
+  background-color: #59362e; /* Deep brown */
+  color: white;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  clear: both;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-links,
+.copyright,
+.footer-links {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.social-links {
+  margin-right: 20px;
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block; /* Changed */
+}
+
+.social-links li {
+  margin: 0 5px; /* Reduced spacing */
+  display: inline-block; /* Changed */
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5em; /* Adjusted size */
+  transition: color 0.3s ease;
+  display: inline-block; /* Added to allow hover */
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+}
+
+.social-links a:hover {
+  color: #ddd; /* Lighter shade on hover */
+  text-decoration: none;
+}
+
+.copyright {
+  margin: 0 20px;
+}
+
+.footer-links {
+  margin-left: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .highlands-footer {
+    text-align: center;
+  }
+
+  .footer-container {
+    text-align: center;
+  }
+
+  .social-links,
+  .copyright,
+  .footer-links {
+    display: block; /* Stack on smaller screens */
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 5px;
+  }
+  .social-links ul {
+    display: block;
+  }
+}
+
+/* Phần hiển thị thông tin quán mới và tin tức */
+.new-store-news-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* Phần thông tin quán mới */
+.new-store {
+  width: 50%; /* Chiếm 50% chiều rộng */
+  background-color: #fff;
+  box-sizing: border-box; /* Đảm bảo padding không làm vượt kích thước */
+}
+
+/* Phần tin tức mới nhất */
+.latest-news {
+  width: 50%; /* Chiếm 50% chiều rộng */
+  background-color: #fff7e6; 
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box; 
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #b22830; /* Màu đỏ của Highlands */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.store-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.store-details h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.store-details p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 5px 0 10px;
+}
+
+.store-link {
+  color: #b22830;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.store-link:hover {
+  text-decoration: underline;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.news-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: black;
+  margin: 0;
+}
+
+.news-content h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0 0;
+  line-height: 1.3;
+}
+
+/* Responsive Design cho phần quán mới và tin tức */
+@media (max-width: 768px) {
+  .new-store-news-section {
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .new-store,
+  .latest-news {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .store-details h3 {
+    font-size: 1.1rem;
+  }
+
+  .store-details p {
+    font-size: 0.85rem;
+  }
+
+  .news-item {
+    gap: 10px;
+  }
+
+  .news-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .news-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .news-date {
+    font-size: 0.75rem;
+  }
+}
+
+.grid-container{
+  display: grid;
+  background-color: #fde8a5; 
+  grid-template-columns: 1fr 1fr; 
+  width: 100vw; 
+  max-width: 100vw;
+  gap: 0; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.left-container{
+  background-color: red;
+  width: 100%;
+  max-width: 50vw;
+  position: relative;
+}
+
+.highlands-coffee-shop{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+}
+
+.section-title {
+  position: absolute;
+  color: white;
+  top: 11%;
+  left: 2%;
+  font-size: 2vw;
+  margin: 0;
+  z-index: 1; 
+}
+
+
+.right-container{
+  background-color: #FDE8A5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  
+}
+a{
+  text-decoration: none;
+}
+.news-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.news-image {
+  width: 18%; 
+  height: auto;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.news-content{
+  text-align: left; /* Giữ chữ canh trái trong news-content */
+}
+
+.news-content h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+}   
